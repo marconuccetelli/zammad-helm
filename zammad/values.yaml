@@ -144,6 +144,11 @@ elasticsearch:
   image: "zammad/zammad-docker-compose"
   imageTag: "zammad-elasticsearch-3.2.0-13"
   clusterName: zammad
+  volumeClaimTemplate:
+    storageClassName: local-path
+    resources:
+      requests:
+        storage: 10Gi
   replicas: 1
   # Workaround to get helm test to work in GitHub action CI
   # the [ES chart](https://github.com/elastic/helm-charts/tree/master/elasticsearch) default would be: "wait_for_status=green&timeout=1s"
@@ -187,6 +192,10 @@ postgresql:
   postgresqlUsername: zammad
   postgresqlPassword: zammad
   postgresqlDatabase: zammad_production
+  global:
+    storageClass: local-path
+  persistence:
+    size: 2Gi
   # resources:
   #   requests:
   #     cpu: 250m
