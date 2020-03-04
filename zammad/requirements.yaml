@@ -3,9 +3,6 @@ dependencies:
     repository: https://helm.elastic.co
     version: 7.6.0
     condition: elasticsearch.enabled
-    import-values:
-      - child: volumeClaimTemplate
-        parent: elasticVolumeClaimTemplate
   - name: memcached
     version: 4.2.6
     repository: https://charts.bitnami.com
@@ -14,8 +11,3 @@ dependencies:
     version: 8.3.4
     repository: https://charts.bitnami.com
     condition: postgresql.enabled
-    import-values:
-      - child: persistence.storageClass
-        parent: defaultStorageClass
-      - child: persistence.size
-        parent: defaultStorageSize
