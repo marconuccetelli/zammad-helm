@@ -9,7 +9,7 @@ icon: https://raw.githubusercontent.com/zammad/zammad-documentation/master/image
 sources:
   - https://github.com/zammad/zammad
   - https://github.com/zammad/zammad-docker-compose
-  - https://github.com/zammad/zammad-helm
+  - https://github.com/marconuccetelli/zammad-helm
 maintainers:
   - name: monotek
     email: monotek23@gmail.com
